@@ -10,8 +10,7 @@ import com.keroles.Pharmacy.Repository.Operation.AddressJpaRepo;
 import com.keroles.Pharmacy.Repository.Operation.AddressRepoOp;
 import java.util.List;
 import java.util.Optional;
-import javax.persistence.EntityManager;
-import org.hibernate.Session;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -32,6 +31,7 @@ public class AddressRepoImpl implements AddressRepoOp {
     public Address insertAddress(Address address) {
 
         return addressJpaRepo.save(address);
+
     }
 
     @Override
@@ -73,4 +73,19 @@ public class AddressRepoImpl implements AddressRepoOp {
         return addressJpaRepo.findAll();
     }
 
+    @Override
+    public List<String> getAllGovernorates() {
+        return addressJpaRepo.getAllGovernorates();
+    }
+
+    @Override
+    public List<String> getCitiesInGovernorate(String governorate) {
+
+        return addressJpaRepo.getCitiesInGovernorate(governorate);
+    }
+
+    @Override
+    public List<Address> getAddressByCityAndGovernorate(String governorate, String city) {
+        return addressJpaRepo.getAddressByCityAndGovernorate(governorate,city);
+    }
 }

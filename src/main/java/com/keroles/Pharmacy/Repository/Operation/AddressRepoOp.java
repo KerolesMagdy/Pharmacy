@@ -6,7 +6,7 @@
 package com.keroles.Pharmacy.Repository.Operation;
 
 import com.keroles.Pharmacy.Model.Entity.Address;
-import com.keroles.Pharmacy.Model.Entity.Users;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +27,9 @@ public interface AddressRepoOp {
 
     public List<Address> findAllAddress();
 
+    public List<String> getAllGovernorates();
 
+    public List<String> getCitiesInGovernorate(String governorate);
 
+    public List<Address> getAddressByCityAndGovernorate(String governorate, String city);
 }

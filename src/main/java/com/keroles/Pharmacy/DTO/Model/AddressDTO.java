@@ -7,13 +7,14 @@ package com.keroles.Pharmacy.DTO.Model;
 
 import java.io.Serializable;
 import lombok.Data;
+import org.springframework.hateoas.RepresentationModel;
 
 /**
  *
  * @author Keroles Magdy
  */
 @Data
-public class UserAddressDOT implements Serializable {
+public class AddressDTO extends RepresentationModel<AddressDTO> implements Serializable {
      private Integer addressId;
      private String addressTitle;
      private String city;

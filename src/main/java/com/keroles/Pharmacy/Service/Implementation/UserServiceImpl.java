@@ -5,8 +5,8 @@
  */
 package com.keroles.Pharmacy.Service.Implementation;
 
-import com.keroles.Pharmacy.Constant.ConstantDbProperties;
 import com.keroles.Pharmacy.DTO.Model.UserDTO;
+import com.keroles.Pharmacy.Exception.Exceptions.EmployeeNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.UserNotFoundException;
 import com.keroles.Pharmacy.DTO.Mapper.UserMapper;
 import com.keroles.Pharmacy.Model.Entity.Users;
@@ -16,18 +16,13 @@ import com.keroles.Pharmacy.Service.Operation.UserServiceOp;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.RepresentationModel;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import org.springframework.stereotype.Component;
 import static com.keroles.Pharmacy.Constant.ConstantExceptionPhrases.*;
 import static com.keroles.Pharmacy.Constant.ConstantURI.*;
-import java.util.Date;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import static com.keroles.Pharmacy.Constant.ConstantResponsePhrases.*;
-import static com.keroles.Pharmacy.Constant.ConstantURI.*;
+
 /**
  *
  * @author Keroles Magdy
@@ -73,8 +68,8 @@ public class UserServiceImpl implements UserServiceOp {
         }
 
         Link link = linkTo(methodOn(this.getClass()).getAllUsers())
-                .slash(get_all_useres_uri)
-                .withRel("useres");
+                .slash(user_uri)
+                .withRel("users");
         RepresentationModel<UserDTO> representationModel = userMapper.convertEntityToDTO(user).add(link);
         return representationModel;
     }
@@ -92,9 +87,8 @@ public class UserServiceImpl implements UserServiceOp {
     public List<UserDTO> getAllUsers() {
         List<Users> users = userRepoImpl.findAllUsers();
         if (users.isEmpty()) {
-            throw new UserNotFoundException(not_found_useres);
+            throw new UserNotFoundException(not_found_users);
         }
         return userMapper.convertEntityListToDTO(users);
     }
-
 }

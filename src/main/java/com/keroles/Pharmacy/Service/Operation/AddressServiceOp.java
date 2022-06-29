@@ -5,9 +5,10 @@
  */
 package com.keroles.Pharmacy.Service.Operation;
 
-import com.keroles.Pharmacy.DTO.Model.UserAddressDOT;
+import com.keroles.Pharmacy.DTO.Model.AddressDTO;
 import com.keroles.Pharmacy.Model.Entity.Address;
-import com.keroles.Pharmacy.Model.Entity.Users;
+import org.springframework.hateoas.RepresentationModel;
+
 import java.util.List;
 
 /**
@@ -19,7 +20,11 @@ public interface AddressServiceOp {
         Address save(Address address);
         void update(Address address);
         void remove(int id);
-        UserAddressDOT getAddressById(int id);
-        List<UserAddressDOT> getPagingAddress(int pageNumber, int pageSize,String sortField);
-        List<UserAddressDOT> getAllAddresses();
+        RepresentationModel<AddressDTO> getAddressById(int id);
+        List<AddressDTO> getPagingAddress(int pageNumber, int pageSize);
+        List<AddressDTO> getAllAddresses();
+        List<String> getAllGovernorates();
+        List<String> getCitiesInGovernorate(String governorate);
+        List<AddressDTO> getAddressByCityAndGovernorate(String governorate, String city);
+
 }

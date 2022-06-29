@@ -12,14 +12,14 @@ import org.springframework.http.HttpStatus;
  *
  * @author Keroles Magdy
  */
-public class UserExceptionResponseModel {
+public class ExceptionResponseModel {
     private Date timestamp;
     private Integer status;
     private HttpStatus error;
     private String message;
     private String path;
 
-    public UserExceptionResponseModel(Date timestamp, Integer status, HttpStatus error, String message, String path) {
+    public ExceptionResponseModel(Date timestamp, Integer status, HttpStatus error, String message, String path) {
         this.timestamp = timestamp;
         this.status = status;
         this.error = error;

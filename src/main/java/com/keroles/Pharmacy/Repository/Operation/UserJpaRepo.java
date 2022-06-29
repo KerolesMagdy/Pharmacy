@@ -5,6 +5,7 @@
  */
 package com.keroles.Pharmacy.Repository.Operation;
 
+import com.keroles.Pharmacy.DTO.Model.UserDTO;
 import com.keroles.Pharmacy.Model.Entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -15,5 +16,4 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserJpaRepo extends JpaRepository<Users, Integer> {
-    
 }

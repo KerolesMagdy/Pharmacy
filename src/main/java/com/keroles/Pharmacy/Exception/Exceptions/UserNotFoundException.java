@@ -4,10 +4,6 @@
  * and open the template in the editor.
  */
 package com.keroles.Pharmacy.Exception.Exceptions;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
 /**
  *
  * @author Keroles Magdy

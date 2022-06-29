@@ -6,7 +6,8 @@
 package com.keroles.Pharmacy.Exception.ExceptionHandler;
 
 import com.keroles.Pharmacy.Constant.ConstantExceptionPhrases;
-import com.keroles.Pharmacy.Exception.ExceptionResponseModel.UserExceptionResponseModel;
+import com.keroles.Pharmacy.Exception.ExceptionResponseModel.ExceptionResponseModel;
+import com.keroles.Pharmacy.Exception.Exceptions.AddressNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.UserNotFoundException;
 import java.util.Date;
 import org.springframework.http.HttpHeaders;
@@ -27,14 +28,14 @@ public class UserExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
     public final ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex, WebRequest request) {
-        UserExceptionResponseModel userExceptionResponseModel = new UserExceptionResponseModel(new Date(),HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND, ex.getMessage(), request.getDescription(false));
+        ExceptionResponseModel userExceptionResponseModel = new ExceptionResponseModel(new Date(),HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND, ex.getMessage(), request.getDescription(false));
         return new ResponseEntity(userExceptionResponseModel, userExceptionResponseModel.getError());
     }
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         
-        UserExceptionResponseModel userExceptionResponseModel=new UserExceptionResponseModel(new Date(),HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST,ConstantExceptionPhrases.validation_failed+ex.getFieldError().getDefaultMessage() , request.getDescription(false));
+        ExceptionResponseModel userExceptionResponseModel=new ExceptionResponseModel(new Date(),HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST,ConstantExceptionPhrases.validation_failed+ex.getFieldError().getDefaultMessage() , request.getDescription(false));
 
         return new ResponseEntity(userExceptionResponseModel, userExceptionResponseModel.getError());
     }

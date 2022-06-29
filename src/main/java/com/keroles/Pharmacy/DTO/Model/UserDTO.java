@@ -5,7 +5,6 @@
  */
 package com.keroles.Pharmacy.DTO.Model;
 
-import com.keroles.Pharmacy.Model.Entity.Address;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
@@ -26,5 +25,5 @@ public class UserDTO extends RepresentationModel<UserDTO> implements Serializabl
     Date userDob;
     Float userLat;
     Float userLong;
-    UserAddressDOT address;
+    AddressDTO addressDTO;
 }
