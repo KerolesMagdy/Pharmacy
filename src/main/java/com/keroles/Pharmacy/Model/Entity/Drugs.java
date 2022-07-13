@@ -198,6 +198,19 @@ public class Drugs  implements java.io.Serializable {
     }
 
 
+    public void Transfer(Drugs drugs){
+        this.drugsBarcode=drugs.getDrugsBarcode()!=null?drugs.getDrugsBarcode():null;
+        this.drugsName=drugs.getDrugsBarcode()!=null?drugs.getDrugsName():null;
+        this.costPrice=drugs.getDrugsBarcode()!=null?drugs.getCostPrice():null;
+        this.sellingPrice=drugs.getDrugsBarcode()!=null?drugs.getSellingPrice():null;
+        this.dose=drugs.getDrugsBarcode()!=null?drugs.getDose():null;
+        this.expirationDate=drugs.getDrugsBarcode()!=null?drugs.getExpirationDate():null;
+        this.productionDate=drugs.getDrugsBarcode()!=null?drugs.getProductionDate():null;
+        this.quantity=drugs.getDrugsBarcode()!=null?drugs.getQuantity():null;
+        this.type=drugs.getDrugsBarcode()!=null?drugs.getType():null;
+        this.place=drugs.getDrugsBarcode()!=null?drugs.getPlace():null;
+
+    }
 
 
 }

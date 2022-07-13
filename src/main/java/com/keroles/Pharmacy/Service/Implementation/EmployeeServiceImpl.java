@@ -2,6 +2,7 @@ package com.keroles.Pharmacy.Service.Implementation;
 
 import com.keroles.Pharmacy.DTO.Mapper.EmployeeMapper;
 import com.keroles.Pharmacy.DTO.Model.EmployeeDTO;
+import com.keroles.Pharmacy.Exception.Exceptions.AddressNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.EmployeeNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.UserNotFoundException;
 import com.keroles.Pharmacy.Model.Entity.Employee;
@@ -41,9 +42,11 @@ public class EmployeeServiceImpl implements EmployeeServiceOp {
 
     @Override
     public void updateBasicInfo(Employee employee) {
-        if (!employeeRepoImpl.updateEmployeeBasicInfo(employee)) {
+        if (!employeeRepoImpl.updateEmployeeBasicInfo(employee))
             throw new EmployeeNotFoundException(not_found_employee_to_update);
-        }
+
+//        if (!addressRepoImpl.updateAddress(employee.getAddress()))
+//            throw new AddressNotFoundException(not_found_address_to_update);
     }
 
     @Override

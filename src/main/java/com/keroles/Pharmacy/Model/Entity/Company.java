@@ -117,11 +117,21 @@ public class Company implements java.io.Serializable {
     public void Transfer(Company company){
         this.companyId=company.getCompanyId()!=null?company.getCompanyId():null;
         this.name=company.getName()!=null?company.getName():null;
+        this.phone=company.getPhone()!=null?company.getPhone():null;
+//        this.address=company.getAddress()!=null?company.getAddress():null;
+//        this.logo=company.getLogo()!=null?company.getLogo():null;
+
+    }
+
+    // transfer full attribute
+/*    public void Transfer(Company company){
+        this.companyId=company.getCompanyId()!=null?company.getCompanyId():null;
+        this.name=company.getName()!=null?company.getName():null;
         this.address=company.getAddress()!=null?company.getAddress():null;
         this.phone=company.getPhone()!=null?company.getPhone():null;
         this.logo=company.getLogo()!=null?company.getLogo():null;
 
     }
-
+*/
 
 }

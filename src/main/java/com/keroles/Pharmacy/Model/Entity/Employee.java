@@ -175,11 +175,23 @@ public class Employee  implements java.io.Serializable {
     public void Transfer(Employee employee){
         this.empName=employee.getEmpName()!=null?employee.getEmpName():null;
         this.empEmail=employee.getEmpEmail()!=null?employee.getEmpEmail():null;
+        this.empNationalId=employee.getEmpNationalId();
+        this.empPhone=employee.getEmpPhone();
+//        this.empImage=employee.getEmpImage()!=null?employee.getEmpImage():null;
+//        this.address=employee.getAddress()!=null?employee.getAddress():null;
+
+    }
+    // transfer full attribute
+/*    public void Transfer(Employee employee){
+        this.empName=employee.getEmpName()!=null?employee.getEmpName():null;
+        this.empEmail=employee.getEmpEmail()!=null?employee.getEmpEmail():null;
         this.empImage=employee.getEmpImage()!=null?employee.getEmpImage():null;
         this.address=employee.getAddress()!=null?employee.getAddress():null;
         this.empNationalId=employee.getEmpNationalId();
         this.empPhone=employee.getEmpPhone();
     }
+
+ */
 
 }
 

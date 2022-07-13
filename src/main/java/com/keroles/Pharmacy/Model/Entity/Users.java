@@ -205,8 +205,26 @@ public class Users  implements java.io.Serializable {
         this.userLat=user.getUserLat()!=null?user.getUserLat():null;
         this.userLong=user.getUserLong()!=null?user.getUserLong():null;
         this.userPhone=Integer.valueOf(user.getUserPhone())!=null?user.getUserPhone():null;
+        this.userEmail=user.getUserEmail()!=null?user.getUserEmail():null;
+//        this.userImage=user.getUserImage()!=null?user.getUserImage():null;
+//        this.address=user.getAddress()!=null?user.getAddress():null;
 
     }
+
+    // transfer full attribute
+ /*   public void Transfer(Users user){
+        this.userName=user.getUserName()!=null?user.getUserName():null;
+        this.userDob=user.getUserDob()!=null?user.getUserDob():null;
+        this.userLat=user.getUserLat()!=null?user.getUserLat():null;
+        this.userLong=user.getUserLong()!=null?user.getUserLong():null;
+        this.userPhone=Integer.valueOf(user.getUserPhone())!=null?user.getUserPhone():null;
+        this.userEmail=user.getUserEmail()!=null?user.getUserEmail():null;
+        this.userImage=user.getUserImage()!=null?user.getUserImage():null;
+        this.address=user.getAddress()!=null?user.getAddress():null;
+
+    }
+
+  */
 }
 
 

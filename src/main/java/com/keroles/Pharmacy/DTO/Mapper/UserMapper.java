@@ -22,6 +22,7 @@ public class UserMapper {
     
     @Autowired 
     private AddressMapper addressMapper;
+    
     public UserDTO convertEntityToDTO(Users users){
         UserDTO userDTO=new UserDTO();
         userDTO.setUserId(users.getUserId());

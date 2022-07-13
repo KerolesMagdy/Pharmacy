@@ -171,10 +171,23 @@ public class DeliveryMan  implements java.io.Serializable {
         this.deliveryManNationalId=deliveryMan.getDeliveryManNationalId();
         this.deliveryManTotalRate=deliveryMan.getDeliveryManTotalRate();
         this.deliveryManRateCount=deliveryMan.getDeliveryManRateCount();
+//        this.address=deliveryMan.getAddress()!=null?deliveryMan.getAddress():null;
+
+    }
+    // transfer full attribute
+/*    public void Transfer(DeliveryMan deliveryMan){
+        this.deliveryManId=deliveryMan.getDeliveryManId()!=null?deliveryMan.getDeliveryManId():null;
+        this.deliveryManName=deliveryMan.getDeliveryManName()!=null?deliveryMan.getDeliveryManName():null;
+        this.deliveryManPhone=deliveryMan.getDeliveryManPhone();
+        this.deliveryManLat=deliveryMan.getDeliveryManLat();
+        this.deliveryManLong=deliveryMan.getDeliveryManLong();
+        this.deliveryManNationalId=deliveryMan.getDeliveryManNationalId();
+        this.deliveryManTotalRate=deliveryMan.getDeliveryManTotalRate();
+        this.deliveryManRateCount=deliveryMan.getDeliveryManRateCount();
         this.address=deliveryMan.getAddress()!=null?deliveryMan.getAddress():null;
 
     }
-
+*/
 
 
 

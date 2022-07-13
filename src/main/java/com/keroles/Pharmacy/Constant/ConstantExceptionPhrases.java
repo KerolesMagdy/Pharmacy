@@ -52,5 +52,22 @@ public class ConstantExceptionPhrases {
     public static final String not_found_delivery_man_to_delete= "The delivery man you need to delete not found";
     public static final String not_found_delivery_man_to_paging= "no delivery man found in this range";
 
+    public static final String not_found_Drugs= "no Drugs found";
+    public static final String found_Drugs_to_insert= "There is a drugs found with same barcode";
+    public static final String not_found_Drugs_to_search= "The Drugs you need not found";
+    public static final String not_found_Drugs_to_update= "The Drugs you need to update not found";
+    public static final String not_found_Drugs_to_delete= "The Drugs you need to delete not found";
+    public static final String not_found_Drugs_to_paging= "no Drugs found in this range";
+
+    public static final String not_found_Order= "no Order found";
+    public static final String not_found_Order_to_search= "The Order you need not found";
+    public static final String not_found_Order_to_update= "The Order you need to update not found";
+    public static final String not_found_Order_id_to_update= "The Order you need to update not have any id";
+    public static final String not_found_Order_to_delete= "The Order you need to delete not found";
+    public static final String not_found_Order_to_paging= "no Order found in this range";
+    public static final String not_found_Order_delivery_man_parameter= "you must pass delivery man id";
+    public static final String not_found_Order_employee_id_parameter= "you must pass employee id";
+    public static final String not_found_Order_user_parameter= "you must pass user id";
+
 
 }

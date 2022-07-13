@@ -6,6 +6,7 @@
 package com.keroles.Pharmacy.Repository.Implementation;
 
 import com.keroles.Pharmacy.Model.Entity.Address;
+import com.keroles.Pharmacy.Model.Entity.Users;
 import com.keroles.Pharmacy.Repository.Operation.AddressJpaRepo;
 import com.keroles.Pharmacy.Repository.Operation.AddressRepoOp;
 import java.util.List;
@@ -36,13 +37,17 @@ public class AddressRepoImpl implements AddressRepoOp {
 
     @Override
     public boolean updateAddress(Address updatedAddress) {
-        Address existAddress = findAddressById(updatedAddress.getAddressId()).get();
-        if (existAddress == null) {
+        try {
+            Optional<Address> searchAddress = findAddressById(updatedAddress.getAddressId());
+            if (!searchAddress.isPresent()) {
+                return false;
+            }
+            Address existAddress=searchAddress.get();
+            existAddress.Transfer(updatedAddress);
+            addressJpaRepo.save(existAddress);
+        } catch (Exception e) {
             return false;
         }
-        existAddress.Transfer(updatedAddress);
-        addressJpaRepo.save(existAddress);
-
         return true;
     }
 

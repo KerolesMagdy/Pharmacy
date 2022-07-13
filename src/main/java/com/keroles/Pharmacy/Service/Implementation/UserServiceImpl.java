@@ -6,6 +6,7 @@
 package com.keroles.Pharmacy.Service.Implementation;
 
 import com.keroles.Pharmacy.DTO.Model.UserDTO;
+import com.keroles.Pharmacy.Exception.Exceptions.AddressNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.EmployeeNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.UserNotFoundException;
 import com.keroles.Pharmacy.DTO.Mapper.UserMapper;
@@ -48,9 +49,11 @@ public class UserServiceImpl implements UserServiceOp {
 
     @Override
     public void updateBasicInfo(Users user) {
-        if (!userRepoImpl.updateUserBasicInfo(user)) {
+        if (!userRepoImpl.updateUserBasicInfo(user))
             throw new UserNotFoundException(not_found_user_to_update);
-        }
+
+//        if (!addressRepoImpl.updateAddress(user.getAddress()))
+//            throw new AddressNotFoundException(not_found_address_to_update);
     }
 
     @Override

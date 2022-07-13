@@ -2,6 +2,7 @@ package com.keroles.Pharmacy.Service.Implementation;
 
 import com.keroles.Pharmacy.DTO.Mapper.CompanyMapper;
 import com.keroles.Pharmacy.DTO.Model.CompanyDTO;
+import com.keroles.Pharmacy.Exception.Exceptions.AddressNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.CompanyNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.EmployeeNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.UserNotFoundException;
@@ -43,9 +44,11 @@ public class CompanyServiceImpl implements CompanyServiceOp {
 
     @Override
     public void updateCompany(Company updatedCompany) {
-        if (!companyRepoImpl.updateCompany(updatedCompany)) {
+        if (!companyRepoImpl.updateCompany(updatedCompany))
             throw new CompanyNotFoundException(not_found_company_to_update);
-        }
+
+//        if (!addressRepoImpl.updateAddress(updatedCompany.getAddress()))
+//            throw new AddressNotFoundException(not_found_address_to_update);
     }
 
     @Override

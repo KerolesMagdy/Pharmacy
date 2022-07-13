@@ -1,6 +1,8 @@
 package com.keroles.Pharmacy;
 
 import com.keroles.Pharmacy.Constant.ConstantSystemConfig;
+import com.keroles.Pharmacy.Repository.Operation.DrugsJpaRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

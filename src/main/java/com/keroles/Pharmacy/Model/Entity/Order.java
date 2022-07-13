@@ -187,6 +187,17 @@ public class Order  implements java.io.Serializable {
     }
 
 
+    public void Transfer(Order order){
+        this.orderId=order.getOrderId()!=null?order.getOrderId():null;
+        this.totalCash=order.getTotalCash();
+        this.orderDatetime=order.getOrderDatetime()!=null?order.getOrderDatetime():null;
+        this.deliverStatus=order.getDeliverStatus()!=null?order.getDeliverStatus():null;
+        this.paymentStatus=order.isPaymentStatus()!=false?order.isPaymentStatus():false;
+        this.orderLat=order.getOrderLat();
+        this.orderLong=order.getOrderLong();
+
+    }
+
 
 
 }

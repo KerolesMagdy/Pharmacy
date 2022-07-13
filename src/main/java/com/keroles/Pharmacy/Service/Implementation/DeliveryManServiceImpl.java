@@ -2,6 +2,7 @@ package com.keroles.Pharmacy.Service.Implementation;
 
 import com.keroles.Pharmacy.DTO.Mapper.DeliveryManMapper;
 import com.keroles.Pharmacy.DTO.Model.DeliveryManDTO;
+import com.keroles.Pharmacy.Exception.Exceptions.AddressNotFoundException;
 import com.keroles.Pharmacy.Exception.Exceptions.DeliveryManNotFoundException;
 import com.keroles.Pharmacy.Model.Entity.DeliveryMan;
 import com.keroles.Pharmacy.Repository.Implementation.AddressRepoImpl;
@@ -39,9 +40,11 @@ public class DeliveryManServiceImpl implements DeliveryManServiceOp {
 
     @Override
     public void updateDeliveryMan(DeliveryMan updatedDeliveryMan) {
-        if (!deliveryManRepoImpl.updateDeliveryMan(updatedDeliveryMan)) {
+        if (!deliveryManRepoImpl.updateDeliveryMan(updatedDeliveryMan))
             throw new DeliveryManNotFoundException(not_found_delivery_man_to_update);
-        }
+
+//        if (!addressRepoImpl.updateAddress(updatedDeliveryMan.getAddress()))
+//            throw new AddressNotFoundException(not_found_address_to_update);
     }
 
     @Override
@@ -67,7 +70,7 @@ public class DeliveryManServiceImpl implements DeliveryManServiceOp {
 
     @Override
     public List<DeliveryManDTO> getPagingDeliveryMan(int pageNumber, int pageSize) {
-        List<DeliveryMan> deliveryMEN = deliveryManRepoImpl.findPagingCDeliveryMan(pageNumber, pageSize, "companyId");
+        List<DeliveryMan> deliveryMEN = deliveryManRepoImpl.findPagingCDeliveryMan(pageNumber, pageSize, "deliveryManId");
         if (deliveryMEN.isEmpty()) {
             throw new DeliveryManNotFoundException(not_found_delivery_man_to_paging);
         }

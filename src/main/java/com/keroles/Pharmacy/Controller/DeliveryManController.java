@@ -12,7 +12,6 @@ import org.springframework.hateoas.RepresentationModel;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.keroles.Pharmacy.Constant.ConstantURI.*;
@@ -55,7 +54,7 @@ public class DeliveryManController {
     }
 
     @RequestMapping(value = delivery_man_name_uri, method = RequestMethod.GET)
-    public List<DeliveryManDTO> getAllCompanyByName(@RequestParam(value = "compName") String deliveryManName) {
+    public List<DeliveryManDTO> getAllCompanyByName(@RequestParam(value = "delivName") String deliveryManName) {
         return deliveryManServiceImpl.getDeliveryManByName(deliveryManName);
     }
 
