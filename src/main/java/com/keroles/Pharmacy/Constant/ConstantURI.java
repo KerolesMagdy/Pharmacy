@@ -51,6 +51,10 @@ public class ConstantURI {
     public final static String order_update_payment_status_uri = "/UPS";
     public final static String order_update_lat_long_uri = "/ULL";
 
+    public final static String order_info_uri = base_api_uri+"/order-info";
+    public final static String order_info_amount_uri = "/amount";
+
+
     //Pages
     public final static String page_uri = "/page";
 

@@ -108,7 +108,6 @@ public class OrderInfo  implements java.io.Serializable {
 
 
 
-
 }
 
 

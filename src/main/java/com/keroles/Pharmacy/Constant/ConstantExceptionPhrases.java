@@ -69,5 +69,15 @@ public class ConstantExceptionPhrases {
     public static final String not_found_Order_employee_id_parameter= "you must pass employee id";
     public static final String not_found_Order_user_parameter= "you must pass user id";
 
+    public static final String not_found_Order_Info= "no Order Info found";
+    public static final String not_found_Order_Info_to_search= "The Order Info you need not found";
+    public static final String not_found_Order_Info_to_update= "The Order Info you need to update not found";
+    public static final String not_found_Order_Info_id_to_update= "The Order Info you need to update not have any id";
+    public static final String not_found_Order_Info_to_delete= "The Order Info you need to delete not found";
+    public static final String not_found_Order_Info_to_paging= "no Order Info found in this range";
+    public static final String not_found_Order_Info_order_id= "you must pass order id";
+    public static final String not_found_Order_Info_drugs_barcode= "you must pass drugs barcode";
+    public static final String not_found_Order_Info_drugs_amount_to_update= "you must pass the new  drugs amount";
+
 
 }

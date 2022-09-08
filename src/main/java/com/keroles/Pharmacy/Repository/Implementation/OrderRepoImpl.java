@@ -36,9 +36,7 @@ public class OrderRepoImpl implements OrderRepoOp {
 
     @Override
     public Optional<Order> findOrderById(int id) {
-        Optional<Order> order = orderJpaRepo.findById(id);
-
-        return order;
+        return orderJpaRepo.findById(id);
     }
 
     @Override
@@ -50,8 +48,7 @@ public class OrderRepoImpl implements OrderRepoOp {
 
     @Override
     public List<Order> findAllOrders() {
-        List<Order> orders = orderJpaRepo.findAll();
-        return orders;
+       return orderJpaRepo.findAll();
     }
 
     @Override
